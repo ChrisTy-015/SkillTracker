@@ -19,24 +19,28 @@ model User {
   name  String?
   
 }
-model CompetenceSkills {
-  id    Int     @id @default(autoincrement())
-  name  String 
-  category String
-}
-
 model Goal {
   id          Int     @id @default(autoincrement())
-  name String
+  name        String
   description String
-  status boolean
+  status      Boolean
+  skills      Skill[] @relation("GoalSkills") // Relation 1 à plusieurs
 }
 
-model Tasks {
+model Skill {
   id          Int     @id @default(autoincrement())
+  name        String
   description String
-  status Boolean
-  due_date
+  category     String
+  goalId      Int     // Clé étrangère vers Goal
+  goal        Goal    @relation("GoalSkills", fields: [goalId], references: [id]) // Relation inverse
+}
+
+model Task {
+  id        Int      @id @default(autoincrement())
+  title     String
+  dueDate   DateTime
+  status      Boolean
 }
 
 

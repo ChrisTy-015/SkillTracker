@@ -16,9 +16,7 @@ export default function Home() {
   const handleClickHome = () => {
     router.push('/'); 
   };
-  const handleClickForm = () => {
-    router.push('/Form'); 
-  };
+
 
   return (
     <div className="min-h-screen flex flex-col justify-between items-center bg-white text-gray-700">
@@ -29,7 +27,6 @@ export default function Home() {
           <button onClick={handleClickHome}>Home</button>
           <button onClick={handleClickLogin}>Login</button>
           <button onClick={handleClickSignUp}>Signup</button>
-          <button onClick={handleClickForm}>Form</button>
  
         </nav>
       </header>

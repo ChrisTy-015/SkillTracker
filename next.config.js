@@ -1,7 +1,6 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  /* options de configuration ici */
 
   webpack(config, { isServer }) {
     if (!isServer) {
@@ -15,7 +14,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
-
-
-
+module.exports = nextConfig;
